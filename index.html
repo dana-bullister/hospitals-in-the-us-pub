@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Hospitals in the United States</title>
+  <meta property="og:image" content="website_thumbnail.jpg">
+  <meta property="og:image:type" content="image/jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:site_name" content="Hospitals in the United States, 2020" />
+  <meta property="og:title" content="Displays the distribution of hospitals throughout the US and our growing need for more accessible infrastructure. " />
+  <meta property="og:description" content="The spread of COVID-19 has shed light on the alarming lack of access to hospitals for those living in more sparsely populated regions of the country." />
+  <meta property="og:url" content="https://dana-bullister.github.io/hospitals-in-the-us/">
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+
+<body>
+  <h1>Hospitals in the United States, 2020</h1>
+  <div id="descr-txt-map">
+    <p>The spread of <b>COVID-19</b> has shed light on the alarming lack of access to hospitals for those living in more sparsely populated regions of the country.</p>
+    <p>While those in <b>urban and eastern</b> regions often have multiple options for facilities, those in <b>rural or western</b> areas frequently must travel hundreds of miles to obtain specialized care.</p>
+    <p>This reality highlights the need for better <b>infrastructure for telemedicine</b>, which isn't covered by many insurers, and reassessment of our distribution of hospital services. </p>
+  </div>
+  <div id="map-chart">
+    <div id="options">
+      <p>Use the filters below to hide or show different types of hospitals.</p>
+      <div id="filters">
+        <label class="opt-container"><input type="checkbox" class="type--option" value="GENERAL ACUTE CARE" checked> General Acute Care <span class="checkmark"></span></label><br>
+        <label class="opt-container"><input type="checkbox" class="type--option" value="CRITICAL ACCESS" checked> Critical Access <span class="checkmark"></span></label><br>
+        <label class="opt-container"><input type="checkbox" class="type--option" value="PSYCHIATRIC" checked> Psychiatric <span class="checkmark"></span></label><br>
+        <label class="opt-container"><input type="checkbox" class="type--option" value="LONG TERM CARE" checked> Long Term Care <span class="checkmark"></span></label><br>
+        <label class="opt-container"><input type="checkbox" class="type--option" value="REHABILITATION" checked> Rehabilitation <span class="checkmark"></span></label><br>
+        <label class="opt-container"><input type="checkbox" class="type--option" value="MILITARY" checked> Military <span class="checkmark"></span></label><br>
+        <label class="opt-container"><input type="checkbox" class="type--option" value="CHILDREN" checked> Children <span class="checkmark"></span></label><br>
+        <label class="opt-container"><input type="checkbox" class="type--option" value="SPECIAL" checked> Special <span class="checkmark"></span></label><br>
+        <label class="opt-container"><input type="checkbox" class="type--option" value="WOMEN" checked> Women <span class="checkmark"></span></label><br>
+        <label class="opt-container"><input type="checkbox" class="type--option" value="CHRONIC DISEASE" checked> Chronic Disease <span class="checkmark"></span></label><br>
+      </div>
+      <p>Data source: <a href="https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals/data">Homeland Infrastructure Foundation-Level Data (HIFLD)</a></p>
+      <p>Limited to the continental United States.</p>
+    </div>
+  </div>
+
+  <h2>Number of US Hospitals Over Time</h2>
+  <div id="descr-txt-line-chart">
+    <p>Lack of convenient, proximal access to hospitals is exacerbated by a decades long trend of <b><a href="https://www.nytimes.com/2018/10/29/upshot/a-sense-of-alarm-as-rural-hospitals-keep-closing.html">steady hospital closures</a></b>. Reasons
+      for this include decisions by some states not to expand Medicaid as part of the Affordable Care Act; hospital
+      mergers and acquisitions resulting in consolidation of services; and more efficient, rapid care. Regardless of cause, closures result in <b>increased time and distance to access</b> of critical services, which for many conditions can lead to
+      worse outcomes. </p>
+    <p>In the face of current unprecedented health challenges, it is imperative that we <b>re-evaluate and strategize deliberately</b> regarding effective provision of critical, time-sensitive, and often life-saving resources.</p>
+    <p>Toggle the buttons below to display trends in total nationwide hospital counts over time, broken down by various categories of ownership type. We see steady downward trends across all categories
+      except for-profit
+      hospitals, which comprise a minority of the total. Further details at the <a href="https://www.cdc.gov/nchs/data/hus/2017/089.pdf">CDC National Center for Health Statistics.</a><br></p>
+  </div>
+  <button id="total" class="selected">Total</button>
+  <button id="nonfederal">Nonfederal</button>
+  <button id="community">Community</button>
+  <button id="nonProfit">Non-Profit</button>
+  <button id="stateLocalGov">State and Local Government</button>
+  <button id="forProfit">For-Profit</button>
+  <button id="federal">Federal</button>
+  <div id="lineChart"></div>
+  <script src="./script.js"></script>
+</body>
+
+</html>

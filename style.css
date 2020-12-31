@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap');
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+  margin: 0px;
+  padding: 15px;
+  font-family: "Merriweather", serif;
+  font-size: 12pt;
+}
+
+h1 {
+  padding-left: 20px;
+  font-size: 32pt;
+}
+
+#descr-txt-map p {
+  vertical-align: top;
+  width: 425px;
+  display: inline-block;
+  padding: 20px;
+}
+
+#map-chart {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#options {
+    position: absolute;
+    right: 0px;
+    width: 30%;
+    height: 100vh;
+    padding-top: 40px;
+    padding-right: 50px;
+    padding-left: 50px;
+    z-index: 100;
+    background-color: rgba(255,255,255,0.85);
+}
+
+#options p {
+  word-wrap: break-word;
+}
+
+#filters {
+    font-size: 12pt;
+    line-height: 26pt;
+}
+
+.opt-container {
+  position: relative;
+  padding-left: 30px;
+}
+
+/* hide the browser's default checkbox */
+.opt-container input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+/* create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+}
+
+/* when unchecked set the checkbox opacity as lower */
+.opt-container input[type="checkbox"]  ~ .checkmark {
+  opacity: .2;
+}
+
+/* when checked set the checkbox opacity as higher */
+.opt-container input[type="checkbox"]:checked  ~ .checkmark {
+  opacity: .6;
+}
+
+/* create the checkmark */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* show checkmark when checked */
+.opt-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* style the checkmar */
+.opt-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.state {
+    fill: lightgrey;
+    stroke: black;
+    stroke-opacity: 0.8;
+}
+
+.county {
+  fill: transparent;
+  stroke: black;
+  stroke-opacity: .04;
+}
+
+.tooltip {
+    position: absolute;
+    visibility: hidden;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 9pt;
+    line-height: 14pt;
+    color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 101;
+    padding: 15px;
+}
+
+#lineChart {
+    width: 100%;
+    height: 80vh;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+#descr-txt-line-chart p {
+  vertical-align: top;
+  width: 100%;
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  padding: 0;
+}
+
+button.selected {
+  background-color: rgb(174,174,174);
+}
+
+.axisLabel {
+font-size: 16pt;
+font-weight: bold;
+}
+
+.axis {
+font-size: 12pt;
+}
